@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+typedef struct {
+    char name[50];
+    char witer[50];
+    int rate;
+}book;
+ 
+ int main () {
+     int rate;
+     book b1 ={"To Kill a Mockingbird","Harper Lee",500};
+     book b2 ={"The Alchemist","Paulo Coelho",650};
+     book b3 ={"Pride and Prejudice","Jane Austen",450};
+     printf("book 1: %s, wirter: %s,rate: %d\n",b1.name,b1.witer,b1.rate);
+     printf("book 2: %s, wirter: %s,rate: %d\n",b2.name,b2.witer,b2.rate);
+     printf("book 3: %s, wirter: %s,rate: %d\n",b3.name,b3.witer,b3.rate);
+     printf("the most expensive book is 'THE ALCHEMIST'");
+     // I don't known how to calculate the rate,to find the expensive book.
+     
+   
+    
+ 
+
+    return 0;
+}

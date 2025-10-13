@@ -1,0 +1,10 @@
+int main(){
+int Mark= 50;
+if(Mark < 50);{
+prinf("very good");
+
+}else 
+prinf("to bad");
+}
+return 0;
+}
