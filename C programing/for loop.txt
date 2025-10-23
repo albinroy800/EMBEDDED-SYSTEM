@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main (){
+    int num1, i;
+    printf("enter a number :");
+    scanf("%d", &num1);
+    
+    for ( i= 0; i<=num1; i++ ){
+        printf("\n%d",i);
+    }
+    for ( i=num1; i>=0; i-- ){
+        printf("\n%d",i);
+    }
+    return 0;
+}
