@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct Car {
+  char brand[30];
+  int year;
+  float milage;
+  
+};
+
+typedef struct {
+  char brand[30];
+  int year;
+  float milage;
+} Car;
+
+int main() {
+  struct Car car1 = {"BMW", 1999,12.3}; // needs "struct"
+  Car car2 = {"Ford", 1969,10.5}; // shorter with typedef
+
+  printf("%s %d %.1f\n", car1.brand, car1.year,car1.milage);
+  printf("%s %d %.1f\n", car2.brand, car2.year,car2.milage);
+  return 0;
+}
