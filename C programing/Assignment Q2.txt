@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    unsigned int num= 0b00001010;
+    int set_bit  = 2;
+    int clear_bit= 3;
+    int toggle_bit =1;
+    
+    
+    unsigned int set_mask = 1 << set_bit ;
+    unsigned int clear_mask =1 << clear_bit;
+    unsigned int toggle_mask = 1 << toggle_bit;
+    
+    printf("Mask of set bit: %d\n",set_mask);
+    printf("Mask of clear bit: %d\n",clear_mask);
+    printf("Mask of toggle bit: %d\n",toggle_mask);
+    
+    
+    
+    printf("befor vale of set bit:%d\n",num);
+    num = num | set_mask;
+    printf("the after value%d :%d\n",set_bit,num);
+    
+    num=num &~ clear_mask;
+    printf("After clearing the bit%d,value is %d\n",clear_bit,num);
+    
+    num =num ^ toggle_mask;
+    printf("after toggle mask %d\n : mask is %d",toggle_bit,num);
+    
+    
+    return 0;
+}
