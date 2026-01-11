@@ -1,6 +1,6 @@
 <circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
 
-<item itemtype="MCU" CircId="mega328-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-384,-116" rotation="0" hflip="1" vflip="1" label="mega328-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../Embedded/AVR Programing/Traffic_signal_MOTOR/Traffic_signal_MOTOR/Debug/Traffic_signal_MOTOR.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="true" SerialMon="-1" />
+<item itemtype="MCU" CircId="mega328-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-384,-116" rotation="0" hflip="1" vflip="1" label="mega328-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../Traffic_signal_MOTOR/Debug/Traffic_signal_MOTOR.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="true" SerialMon="-1" />
 
 <item itemtype="Led" CircId="Led-2" mainComp="false" Show_id="false" Show_Val="false" Pos="-264,12" rotation="0" hflip="1" vflip="1" label="Led-2" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
 
@@ -8,7 +8,7 @@
 
 <item itemtype="Led" CircId="Led-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-264,68" rotation="0" hflip="1" vflip="1" label="Led-4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
 
-<item itemtype="Ground" CircId="Ground-5" mainComp="false" Show_id="false" Show_Val="false" Pos="-208,92" rotation="0" hflip="1" vflip="1" label="Ground-5" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Ground" CircId="Ground-5" mainComp="false" Show_id="false" Show_Val="false" Pos="-208,96" rotation="0" hflip="1" vflip="1" label="Ground-5" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
 
 <item itemtype="DcMotor" CircId="DcMotor-8" mainComp="false" Show_id="true" Show_Val="false" Pos="-116,-68" rotation="0" hflip="1" vflip="1" label="DcMotor-8" idLabPos="-22,-48" labelrot="0" valLabPos="-14,36" valLabRot="0" RPM_Nominal="60 _RPM" Volt_Nominal="5 V" Resistance="100 Ω" />
 
@@ -42,9 +42,7 @@
 
 <item itemtype="Connector" uid="Connector-8" startpinid="Led-4-rPin" endpinid="Node-7-1" pointList="-248,68,-208,68,-208,64" />
 
-<item itemtype="Connector" uid="Connector-9" startpinid="Node-6-2" endpinid="Node-7-0" pointList="-208,40,-208,64" />
-
-<item itemtype="Connector" uid="Connector-10" startpinid="Node-7-2" endpinid="Ground-5-Gnd" pointList="-208,64,-208,76" />
+<item itemtype="Connector" uid="Connector-10" startpinid="Node-7-2" endpinid="Ground-5-Gnd" pointList="-208,64,-208,80" />
 
 <item itemtype="Connector" uid="Connector-20" startpinid="mega328-1-PORTC5" endpinid="L293-12-1A" pointList="-344,-108,-264,-108,-264,-100" />
 
@@ -67,5 +65,7 @@
 <item itemtype="Connector" uid="Connector-40" startpinid="L293-12-12EN" endpinid="Node-19-0" pointList="-264,-84,-288,-84,-288,-32,-112,-32,-112,-4" />
 
 <item itemtype="Connector" uid="Connector-41" startpinid="Node-19-2" endpinid="Fixed Voltage-10-outnod" pointList="-112,-4,-112,-4" />
+
+<item itemtype="Connector" uid="Connector-9" startpinid="Node-6-2" endpinid="Node-7-0" pointList="-208,40,-208,64" />
 
 </circuit>

@@ -4,17 +4,16 @@
  * Created: 14/12/2025 08:06:01
  * Author : user
  */ 
-
 #include <avr/io.h>
 #define F_CPU 16000000UL
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
-volatile uint8_t interrupt_flag = 0;  
+volatile uint8_t interrupt_flag = 0;
 
 ISR(INT0_vect)
 {
-	interrupt_flag = 1;  
+	interrupt_flag = 1;
 }
 
 void red() {
@@ -37,14 +36,14 @@ void green() {
 
 int main(void)
 {
-	DDRB |= (1<<DDB1)|(1<<DDB2)|(1<<DDB3);   
-	DDRC |= (1<<PC4) | (1<<PC5);             
-	DDRD &= ~((1<<PD2));                    
-	PORTD |= (1<<PD2);                      
+	DDRB |= (1<<DDB1)|(1<<DDB2)|(1<<DDB3);
+	DDRC |= (1<<PC4) | (1<<PC5);
+	DDRD &= ~((1<<PD2));
+	PORTD |= (1<<PD2);
 
-	EIMSK |= (1<<INT0);                      
+	EIMSK |= (1<<INT0);
 	EICRA |= (1<<ISC01) | (1<<ISC00);  // rising edge
-	sei();                                   
+	sei();
 
 	while (1)
 	{
@@ -52,15 +51,15 @@ int main(void)
 		yellow();
 		green();
 
-		if (interrupt_flag) 
-			{
+		if (interrupt_flag)
+		{
 			PORTC |= (1<<PC4);
 			PORTC &= ~(1<<PC5);
 			_delay_ms(5000);
 			PORTC &= ~(1<<PC4);
 			PORTC |= (1<<PC5);
 
-			interrupt_flag = 0;  
+			interrupt_flag = 0;
 		}
 	}
 }

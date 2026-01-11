@@ -90,7 +90,7 @@ Disassembly of section .text:
 00000090 <__vector_1>:
 #include <util/delay.h>
 
-volatile uint8_t interrupt_flag = 0;  
+volatile uint8_t interrupt_flag = 0;
 
 ISR(INT0_vect)
 {
@@ -100,7 +100,7 @@ ISR(INT0_vect)
   96:	0f 92       	push	r0
   98:	11 24       	eor	r1, r1
   9a:	8f 93       	push	r24
-	interrupt_flag = 1;  
+	interrupt_flag = 1;
   9c:	81 e0       	ldi	r24, 0x01	; 1
   9e:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
 }
@@ -194,24 +194,24 @@ void green() {
 
 int main(void)
 {
-	DDRB |= (1<<DDB1)|(1<<DDB2)|(1<<DDB3);   
+	DDRB |= (1<<DDB1)|(1<<DDB2)|(1<<DDB3);
  110:	84 b1       	in	r24, 0x04	; 4
  112:	8e 60       	ori	r24, 0x0E	; 14
  114:	84 b9       	out	0x04, r24	; 4
-	DDRC |= (1<<PC4) | (1<<PC5);             
+	DDRC |= (1<<PC4) | (1<<PC5);
  116:	87 b1       	in	r24, 0x07	; 7
  118:	80 63       	ori	r24, 0x30	; 48
  11a:	87 b9       	out	0x07, r24	; 7
-	DDRD &= ~((1<<PD2));                    
+	DDRD &= ~((1<<PD2));
  11c:	8a b1       	in	r24, 0x0a	; 10
  11e:	8b 7f       	andi	r24, 0xFB	; 251
  120:	8a b9       	out	0x0a, r24	; 10
-	PORTD |= (1<<PD2);                      
+	PORTD |= (1<<PD2);
  122:	8b b1       	in	r24, 0x0b	; 11
  124:	84 60       	ori	r24, 0x04	; 4
  126:	8b b9       	out	0x0b, r24	; 11
 
-	EIMSK |= (1<<INT0);                      
+	EIMSK |= (1<<INT0);
  128:	8d b3       	in	r24, 0x1d	; 29
  12a:	81 60       	ori	r24, 0x01	; 1
  12c:	8d bb       	out	0x1d, r24	; 29
@@ -221,7 +221,7 @@ int main(void)
  132:	80 81       	ld	r24, Z
  134:	83 60       	ori	r24, 0x03	; 3
  136:	80 83       	st	Z, r24
-	sei();                                   
+	sei();
  138:	78 94       	sei
 
 	while (1)
@@ -233,11 +233,11 @@ int main(void)
 		green();
  142:	0e 94 77 00 	call	0xee	; 0xee <green>
 
-		if (interrupt_flag) 
+		if (interrupt_flag)
  146:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
  14a:	88 23       	and	r24, r24
  14c:	b1 f3       	breq	.-20     	; 0x13a <main+0x2a>
-			{
+		{
 			PORTC |= (1<<PC4);
  14e:	88 b1       	in	r24, 0x08	; 8
  150:	80 61       	ori	r24, 0x10	; 16
@@ -265,7 +265,7 @@ int main(void)
  174:	80 62       	ori	r24, 0x20	; 32
  176:	88 b9       	out	0x08, r24	; 8
 
-			interrupt_flag = 0;  
+			interrupt_flag = 0;
  178:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
  17c:	de cf       	rjmp	.-68     	; 0x13a <main+0x2a>
 

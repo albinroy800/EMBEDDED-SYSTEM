@@ -2,14 +2,11 @@
  * PWM(motor).c
  *
  * Created: 01/12/2025 09:04:39
- * Author : user
+ * Author : albinroy
  */ 
 #define F_CPU 16000000UL
 #include <avr/io.h>
 #include <util/delay.h>
-
-
-
 
 int main(void)
 {
@@ -26,7 +23,7 @@ int main(void)
 	TCCR0A|=(1<<COM0A1);
 	TCCR0A&=~(1<<COM0A0);
 	
-	//presaclar
+	//prescaler 1024
 
 	TCCR0B&=~(1<<CS01);
 	TCCR0B|=(1<<CS02)|(1<<CS00);
@@ -35,19 +32,19 @@ int main(void)
 	while (1)
 	
 	{
+		
 		for( int i=0;i<=76;i++)
 		{
 			OCR0A=i;
-			//_delay_ms(50);
+			_delay_ms(50);
 		}
 		
-		
-		/*for( int i=0;i>255;i--)
+		for( int i=0;i>255;i--)
 		{
 			OCR0A=i;
 			_delay_ms(20);
 			
-		}*/
+		}
 	}
 }
 
